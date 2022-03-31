@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/image/
     - assets/onBoarding/
+    - assets/icons/google_icon.png
 
 
 

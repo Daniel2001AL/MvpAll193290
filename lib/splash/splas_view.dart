@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mvp_all/splash/splash_canva.dart';
+import 'package:flutter/cupertino.dart';
 import 'dart:ui' as ui;
 // Importaciones clase Vistas
 import '../pages/on_boarding.dart';
@@ -42,7 +43,7 @@ class _SplashViewState extends State<SplashView> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => OnBoarding(),
+        builder: (context) => const OnBoarding(),
       ),
     );
   }
@@ -56,4 +57,3 @@ class _SplashViewState extends State<SplashView> {
     });
   }
 }
-
