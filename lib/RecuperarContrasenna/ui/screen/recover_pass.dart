@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mvp_all/colors/colors_views.dart';
 
@@ -10,20 +11,24 @@ class RecoverPass extends StatefulWidget {
 
 class _RecoverPassState extends State<RecoverPass> {
   final _formKey = GlobalKey<FormState>();
+  bool _passwordVisible = false;
   @override
-  // ignore: must_call_super
-  void initState() {}
+  void initState() {
+    _passwordVisible = false;
+  }
 
   @override
   Widget build(BuildContext context) {
+    bool _value = false;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: ColorViews.text_header,
+        backgroundColor: ColorsViews.text_header,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: ColorViews.bar_color_able,
+            color: ColorsViews.bar_color_able,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -43,12 +48,7 @@ class _RecoverPassState extends State<RecoverPass> {
       body: Column(
         children: <Widget>[
           const Padding(
-            padding: EdgeInsets.only(
-              top: 18,
-              left: 25,
-              right: 45,
-              bottom: 18,
-            ),
+            padding: EdgeInsets.only(top:18.0, bottom:18.0, right: 10.0,),
             child: Text(
               'Ingresa tu email para restablecer tu contraseña.',
               style: TextStyle(
@@ -66,7 +66,8 @@ class _RecoverPassState extends State<RecoverPass> {
                   padding: EdgeInsets.only(
                     top: 10,
                     bottom: 10,
-                    right: 170,
+                    left: 0,
+                    right: 230,
                   ),
                   child: Text(
                     'Correo electrónico',
@@ -84,9 +85,9 @@ class _RecoverPassState extends State<RecoverPass> {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       filled: true,
-                      hintStyle: const TextStyle(
-                          color: Color.fromARGB(255, 161, 161, 161)),
-                      hintText: "Dirección de correo",
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 161, 161, 161)),
+                      hintText: "Direccion de correo",
                       fillColor: Colors.white70,
                     ),
                     validator: (value) {
@@ -99,7 +100,7 @@ class _RecoverPassState extends State<RecoverPass> {
                 ),
                 const Padding(
                   padding:
-                      EdgeInsets.only(top: 10, left: 30, right: 13, bottom: 15),
+                      EdgeInsets.only(top: 10, left: 40, right: 35, bottom: 15),
                   child: Text(
                     'Ingrese su correo electronico registrado y le enviaremos un correo electronico con un enlace que contiene un enlace para restablecer su contraseña.',
                     style: TextStyle(
@@ -114,21 +115,21 @@ class _RecoverPassState extends State<RecoverPass> {
                     width: 350,
                     child: OutlinedButton(
                       onPressed: () {},
-                      child: const Text('Enviar Solicitud',
+                      child: const Text('Enviar solicitud',
                           style: TextStyle(
-                              color: ColorViews.background_color,
+                              color: ColorsViews.background_color,
                               fontSize: 18)),
                       style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>((states) {
-                          return ColorViews.buttonColor;
+                          return ColorsViews.buttonColor;
                         }),
                         overlayColor: MaterialStateProperty.resolveWith<Color>(
                           (states) {
                             if (states.contains(MaterialState.pressed)) {
-                              return const Color.fromRGBO(158, 158, 158, 1);
+                              return Colors.grey;
                             }
-                            return const Color.fromRGBO(0, 0, 0, 0);
+                            return Colors.transparent;
                           },
                         ),
                         shape:
@@ -147,6 +148,29 @@ class _RecoverPassState extends State<RecoverPass> {
           )
         ],
       ),
+    );
+  }
+}
+
+class ContrasennaOlvidada extends StatelessWidget {
+  const ContrasennaOlvidada({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      textAlign: TextAlign.start,
+      text: TextSpan(children: <InlineSpan>[
+        TextSpan(
+          text: '¿Has olvidado tu contraseña?',
+          style: const TextStyle(
+              color: ColorsViews.bar_color_able,
+              fontSize: 17,
+              fontWeight: FontWeight.bold),
+          recognizer: TapGestureRecognizer()..onTap = () {},
+        ),
+      ]),
     );
   }
 }

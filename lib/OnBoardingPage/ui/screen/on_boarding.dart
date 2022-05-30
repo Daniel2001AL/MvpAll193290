@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../colors/colors_views.dart';
+import '../../../colors/colors_views.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -40,23 +40,24 @@ class _OnBoardingState extends State<OnBoarding> {
     },
   ];
   int pagePosition = 0;
-  final PageController _pageController = PageController(initialPage: 0);
+  PageController _pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color: ColorViews.background_color,
+          color: ColorsViews.background_color,
           child: SizedBox(
             width: double.infinity,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                //Propuesta 1: Dos expanded.
                 Expanded(
                   flex: 2,
                   child: PageView.builder(
-                    controller: _pageController,
+                    controller :_pageController,
                     onPageChanged: (value) => {
                       setState(() {
                         pagePosition = value;
@@ -71,7 +72,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top:20),
                   child: Expanded(
                     flex: 1,
                     child: Column(
@@ -84,7 +85,7 @@ class _OnBoardingState extends State<OnBoarding> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 120, bottom: 20),
+                          padding: const EdgeInsets.only(top: 120, bottom:20),
                           child: _nextButton(),
                         )
                       ],
@@ -105,8 +106,11 @@ class _OnBoardingState extends State<OnBoarding> {
       height: 40,
       child: OutlinedButton(
         onPressed: () {
+          
           if (pagePosition < (boardingData.length - 1)) {
             pagePosition += 1;
+            print(boardingData.length);
+            print(pagePosition);
             setState(() {
               ContainerBoarding(
                 image: boardingData[pagePosition]['image']!,
@@ -114,10 +118,9 @@ class _OnBoardingState extends State<OnBoarding> {
                 text_header: boardingData[pagePosition]['text_header']!,
               );
             });
-            _pageController.animateToPage(pagePosition,
-                duration: const Duration(milliseconds: 450),
-                curve: Curves.decelerate);
-          } else {
+            _pageController.animateToPage(pagePosition, duration: const Duration(milliseconds: 450), curve: Curves.decelerate);
+          }
+          else {
             Navigator.pushNamed(context, '/login');
           }
         },
@@ -126,12 +129,12 @@ class _OnBoardingState extends State<OnBoarding> {
                 ? 'Continuar'
                 : 'Siguiente',
             style: pagePosition == (boardingData.length - 1)
-                ? const TextStyle(color: Color.fromRGBO(255, 255, 255, 1))
-                : const TextStyle(color: ColorViews.text_subtitle)),
+                ? TextStyle(color: Colors.white)
+                : TextStyle(color: ColorsViews.text_subtitle)),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
             if (pagePosition == (boardingData.length - 1)) {
-              return ColorViews.buttonColor;
+              return ColorsViews.buttonColor;
             }
             return Colors.transparent;
           }),
@@ -140,7 +143,7 @@ class _OnBoardingState extends State<OnBoarding> {
               if (states.contains(MaterialState.pressed)) {
                 return Colors.grey;
               }
-              return const Color.fromRGBO(0, 0, 0, 0);
+              return Colors.transparent;
             },
           ),
           shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
@@ -161,8 +164,8 @@ class _OnBoardingState extends State<OnBoarding> {
       width: pagePosition == index ? 20 : 12,
       decoration: BoxDecoration(
           color: pagePosition == index
-              ? ColorViews.bar_color_able
-              : ColorViews.bar_color_disable),
+              ? ColorsViews.bar_color_able
+              : ColorsViews.bar_color_disable),
       margin: const EdgeInsets.only(
         right: 8,
       ),
@@ -171,13 +174,11 @@ class _OnBoardingState extends State<OnBoarding> {
 }
 
 class ContainerBoarding extends StatelessWidget {
-  // ignore: non_constant_identifier_names
   final String image, text, text_header;
   const ContainerBoarding({
     Key? key,
     required this.image,
     required this.text,
-    // ignore: non_constant_identifier_names
     required this.text_header,
   }) : super(key: key);
 
@@ -200,7 +201,7 @@ class ContainerBoarding extends StatelessWidget {
                 Text(
                   text_header,
                   style: const TextStyle(
-                    color: ColorViews.text_header,
+                    color: ColorsViews.text_header,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -211,7 +212,7 @@ class ContainerBoarding extends StatelessWidget {
                     text,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      color: ColorViews.text_subtitle,
+                      color: ColorsViews.text_subtitle,
                     ),
                   ),
                 ),

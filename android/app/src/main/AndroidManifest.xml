@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mvp_all">
+    package="com.example.mvpallpets">
    <application
         android:label="mvp_all"
         android:name="${applicationName}"

@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../models/authentication.dart';
 
 class LoginOption extends StatelessWidget {
   const LoginOption({Key? key}) : super(key: key);
@@ -10,15 +13,22 @@ class LoginOption extends StatelessWidget {
         SizedBox(
           width: 300,
           child: Padding(
-            padding: const EdgeInsets.only(top: 40),
+            padding: const EdgeInsets.only(top: 40, bottom: 50),
             child: Container(
               alignment: Alignment.center,
               child: Column(
                 children: <Widget>[
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      User? user =
+                          await Authenticator.iniciarSesion(context: context);
+                      print(user?.isAnonymous);
+                      if (!user!.isAnonymous) {
+                        Navigator.pushNamed(context, '/home');
+                      }
+                    },
                     style: ElevatedButton.styleFrom(
-                      primary: const Color.fromRGBO(49, 105, 245, 1),
+                      primary: const Color(0xFF3169f5),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
                       ),
@@ -33,11 +43,12 @@ class LoginOption extends StatelessWidget {
                         ),
                         const Text(
                           'Continuar con Google',
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 16),
                         ),
                       ],
                     ),
                   ),
+                  const Padding(padding: EdgeInsets.only(bottom: 15.0)),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -52,7 +63,7 @@ class LoginOption extends StatelessWidget {
                         Icon(Icons.facebook),
                         Text(
                           'Continuar con Facebook',
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 16),
                         ),
                       ],
                     ),
@@ -76,13 +87,13 @@ class LoginOption extends StatelessWidget {
                         children: const <Widget>[
                           Icon(
                             Icons.email,
-                            color: Color.fromRGBO(100, 104, 111, 1),
+                            color: Color(0xFF64686f),
                           ),
                           Text(
                             'Registrarse con e-mail',
                             style: TextStyle(
                               fontSize: 14,
-                              color: Color.fromRGBO(100, 104, 111, 1),
+                              color: Color(0xFF64686f),
                             ),
                           ),
                         ],
@@ -98,33 +109,29 @@ class LoginOption extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20),
           child: Column(children: <Widget>[
             SizedBox(
-              height: 60,
-              width: 250,
+              height: 30,
+              width: 150,
               child: TextButton(
-                style: TextButton.styleFrom(
-                    primary: const Color.fromRGBO(252, 20, 96, 1)),
+                style: TextButton.styleFrom(primary: Colors.red),
                 onPressed: () {},
                 child: const Text(
                   'Entrar como invitado',
                   style: TextStyle(
                     fontSize: 13,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
             SizedBox(
               height: 30,
-              width: 250,
+              width: 150,
               child: TextButton(
-                style: TextButton.styleFrom(
-                    primary: const Color.fromRGBO(118, 167, 87, 1.0)),
+                style: TextButton.styleFrom(primary: Colors.green[400]),
                 onPressed: () {},
                 child: const Text(
                   'Entrar como vendedor',
                   style: TextStyle(
                     fontSize: 13,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -132,7 +139,7 @@ class LoginOption extends StatelessWidget {
           ]),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 30, left: 70),
+          padding: const EdgeInsets.only(left: 78.5, top: 50),
           child: Row(
             children: <Widget>[
               const Text(
@@ -146,9 +153,8 @@ class LoginOption extends StatelessWidget {
                 child: const Text(
                   'Iniciar sesión',
                   style: TextStyle(
-                    color: Color.fromRGBO(252, 20, 96, 1),
+                    color: Colors.red,
                     fontSize: 13,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

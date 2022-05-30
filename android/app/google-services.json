@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "983314836931",
+    "project_id": "mvpallpets",
+    "storage_bucket": "mvpallpets.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983314836931:android:0dd04a50b03418cb9ee176",
+        "android_client_info": {
+          "package_name": "com.example.mvpallpets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983314836931-kdf4vp9pmd5ajr15rbipctviccca391j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mvpallpets",
+            "certificate_hash": "6495f3bd286578b50f25a62c2e57bd0a608ec41a"
+          }
+        },
+        {
+          "client_id": "983314836931-tj1p3fjtacclg2ee3t3otpmjbp0tuvdi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlRh0ER6k6RSXby3cJdN5QAYyRpNAHIXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983314836931-tj1p3fjtacclg2ee3t3otpmjbp0tuvdi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
