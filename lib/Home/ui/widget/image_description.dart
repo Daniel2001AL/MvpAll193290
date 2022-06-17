@@ -23,13 +23,22 @@ class ImageDescription extends StatelessWidget {
         ),
         body: Column(
           children: [
-            const Padding(padding: EdgeInsets.all(30.0)),
-            Image.network(url),
-            const Padding(padding: EdgeInsets.only(top: 30)),
+            const Padding(padding: EdgeInsets.all(20.0)),
+            Container(
+                width: 250,
+                height: 250,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                child: Image.network(url)),
+            const Padding(padding: EdgeInsets.only(top: 15)),
             Center(
               child: Text(
                 description,
-                style: const TextStyle(fontSize: 20.0),
+                style: const TextStyle(
+                    fontSize: 25.0,
+                    color: ColorsViews.text_header,
+                    fontWeight: FontWeight.bold),
               ),
             )
           ],

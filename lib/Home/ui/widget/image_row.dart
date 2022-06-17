@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../colors/colors_views.dart';
 import 'image_description.dart';
 
 class ImageRow extends StatelessWidget {
@@ -17,7 +18,7 @@ class ImageRow extends StatelessWidget {
 
           // Con esta propiedad agregamos margen a nuestro Card
           // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
 
           // Con esta propiedad agregamos elevación a nuestro card
           // La sombra que tiene el Card aumentará
@@ -37,8 +38,8 @@ class ImageRow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const ImageDescription(
-                                    'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
-                                    'Bonita imagen de perro Husky'),
+                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHK4agIAvZtDs4Mt1-kxckC-Vqztk4G7Hhw&usqp=CAU',
+                                    'Panda con pena'),
                               ),
                             );
                           },
@@ -46,15 +47,22 @@ class ImageRow extends StatelessWidget {
                             width: 80,
                             height: 100,
                             decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                    "https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg"),
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHK4agIAvZtDs4Mt1-kxckC-Vqztk4G7Hhw&usqp=CAU"),
                               ),
                             ),
                           ),
                         ),
-                        const Text("Husky")
+                        const Text(
+                          "Pena",
+                          style: TextStyle(
+                              color: ColorsViews.text_header,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
@@ -68,8 +76,8 @@ class ImageRow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const ImageDescription(
-                                    'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
-                                    'Bonita imagen de perro Husky'),
+                                    'https://i0.wp.com/hipertextual.com/wp-content/uploads/2022/01/sid-balachandran-_9a-3NO5KJE-unsplash-scaled.jpg?fit=2560%2C1704&quality=50&strip=all&ssl=1',
+                                    'Panda con hambre'),
                               ),
                             );
                           },
@@ -77,15 +85,22 @@ class ImageRow extends StatelessWidget {
                             width: 80,
                             height: 100,
                             decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                    "https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg"),
+                                    "https://i0.wp.com/hipertextual.com/wp-content/uploads/2022/01/sid-balachandran-_9a-3NO5KJE-unsplash-scaled.jpg?fit=2560%2C1704&quality=50&strip=all&ssl=1"),
                               ),
                             ),
                           ),
                         ),
-                        const Text("Husky")
+                        const Text(
+                          "Hambre",
+                          style: TextStyle(
+                              color: ColorsViews.text_header,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
@@ -99,8 +114,8 @@ class ImageRow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const ImageDescription(
-                                    'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
-                                    'Bonita imagen de perro Husky'),
+                                    'https://www.ngenespanol.com/wp-content/uploads/2018/08/¿Por-qué-es-tan-difícil-que-se-reproduzcan-los-pandas-1280x720.jpg',
+                                    'Panda con sueño'),
                               ),
                             );
                           },
@@ -108,15 +123,22 @@ class ImageRow extends StatelessWidget {
                             width: 80,
                             height: 100,
                             decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                    "https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg"),
+                                    "https://www.ngenespanol.com/wp-content/uploads/2018/08/¿Por-qué-es-tan-difícil-que-se-reproduzcan-los-pandas-1280x720.jpg"),
                               ),
                             ),
                           ),
                         ),
-                        const Text("Husky")
+                        const Text(
+                          "Sueño",
+                          style: TextStyle(
+                              color: ColorsViews.text_header,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
@@ -133,7 +155,7 @@ class ImageRow extends StatelessWidget {
 
           // Con esta propiedad agregamos margen a nuestro Card
           // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
 
           // Con esta propiedad agregamos elevación a nuestro card
           // La sombra que tiene el Card aumentará
@@ -153,8 +175,8 @@ class ImageRow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const ImageDescription(
-                                    'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
-                                    'Bonita imagen de perro Husky'),
+                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHK4agIAvZtDs4Mt1-kxckC-Vqztk4G7Hhw&usqp=CAU',
+                                    'Panda con pena'),
                               ),
                             );
                           },
@@ -162,15 +184,22 @@ class ImageRow extends StatelessWidget {
                             width: 80,
                             height: 100,
                             decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                    "https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg"),
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHK4agIAvZtDs4Mt1-kxckC-Vqztk4G7Hhw&usqp=CAU"),
                               ),
                             ),
                           ),
                         ),
-                        const Text('Husky')
+                        const Text(
+                          "Pena",
+                          style: TextStyle(
+                              color: ColorsViews.text_header,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
@@ -184,8 +213,8 @@ class ImageRow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const ImageDescription(
-                                    'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
-                                    'Bonita imagen de perro Husky'),
+                                    'https://i0.wp.com/hipertextual.com/wp-content/uploads/2022/01/sid-balachandran-_9a-3NO5KJE-unsplash-scaled.jpg?fit=2560%2C1704&quality=50&strip=all&ssl=1',
+                                    'Panda con hambre'),
                               ),
                             );
                           },
@@ -193,15 +222,22 @@ class ImageRow extends StatelessWidget {
                             width: 80,
                             height: 100,
                             decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                    "https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg"),
+                                    "https://i0.wp.com/hipertextual.com/wp-content/uploads/2022/01/sid-balachandran-_9a-3NO5KJE-unsplash-scaled.jpg?fit=2560%2C1704&quality=50&strip=all&ssl=1"),
                               ),
                             ),
                           ),
                         ),
-                        const Text("Husky")
+                        const Text(
+                          "Hambre",
+                          style: TextStyle(
+                              color: ColorsViews.text_header,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
@@ -215,8 +251,8 @@ class ImageRow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const ImageDescription(
-                                    'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
-                                    'Bonita imagen de perro Husky'),
+                                    'https://www.ngenespanol.com/wp-content/uploads/2018/08/¿Por-qué-es-tan-difícil-que-se-reproduzcan-los-pandas-1280x720.jpg',
+                                    'Panda con sueño'),
                               ),
                             );
                           },
@@ -224,15 +260,22 @@ class ImageRow extends StatelessWidget {
                             width: 80,
                             height: 100,
                             decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                    "https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg"),
+                                    "https://www.ngenespanol.com/wp-content/uploads/2018/08/¿Por-qué-es-tan-difícil-que-se-reproduzcan-los-pandas-1280x720.jpg"),
                               ),
                             ),
                           ),
                         ),
-                        const Text("Husky")
+                        const Text(
+                          "Sueño",
+                          style: TextStyle(
+                              color: ColorsViews.text_header,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
@@ -240,7 +283,7 @@ class ImageRow extends StatelessWidget {
               ),
             ),
           ),
-        ),
+        )
       ],
     );
   }

@@ -7,6 +7,7 @@ import 'package:mvp_all/OnBoardingPage/ui/screen/on_boarding.dart';
 import 'package:mvp_all/RecuperarContrasenna/ui/screen/recover_pass.dart';
 import 'package:mvp_all/Register/ui/screen/register.dart';
 import 'package:mvp_all/colors/colors_views.dart';
+import 'package:mvp_all/homeview/principal_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,14 +35,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         canvasColor: ColorsViews.background_color,
       ),
-      initialRoute: '/',
+      initialRoute: '/home2',
       routes: {
-        '/': (context) => OnBoarding(),
-        '/home': (context) => HomeVetApp(),
-        '/login': (context) => const Login(),
-        '/login_panel': (context) => const LoginPanel(),
-        '/register_page': (context) => const RegisterPage(),
-        '/recover_pass': (context) => const RecoverPass(),
+        // '/': (context) => const OnBoarding(),
+        // '/home': (context) => const HomeVetApp(),
+        // '/login': (context) => const Login(),
+        // '/login_panel': (context) => const LoginPanel(),
+        // '/register_page': (context) => const RegisterPage(),
+        // '/recover_pass': (context) => const RecoverPass(),
+        '/home2': (context) => const PrincipalScreen(),
       },
     );
   }

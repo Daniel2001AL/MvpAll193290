@@ -21,7 +21,7 @@ class _HomeVetAppState extends State<HomeVetApp> {
     ListView(
       children: [
         const Padding(
-          padding: EdgeInsets.only(bottom: 40),
+          padding: EdgeInsets.only(bottom: 40, top: 30),
           child: Carousel(),
         ),
         Card(
@@ -32,7 +32,7 @@ class _HomeVetAppState extends State<HomeVetApp> {
 
           // Con esta propiedad agregamos margen a nuestro Card
           // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
-          margin: EdgeInsets.all(15),
+          margin: const EdgeInsets.all(15),
 
           // Con esta propiedad agregamos elevación a nuestro card
           // La sombra que tiene el Card aumentará
@@ -45,7 +45,7 @@ class _HomeVetAppState extends State<HomeVetApp> {
             ),
           ),
         ),
-        ImageRow()
+        const ImageRow()
       ],
     ),
     Container(),
